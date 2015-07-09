@@ -9,3 +9,6 @@ accounts-password
 useraccounts:bootstrap
 twbs:bootstrap
 iron:router
+accounts-twitter
+service-configuration
+accounts-ui
