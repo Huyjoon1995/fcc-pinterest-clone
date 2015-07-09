@@ -12,3 +12,6 @@ iron:router
 accounts-twitter
 service-configuration
 accounts-ui
+aldeed:autoform
+aldeed:simple-schema
+aldeed:collection2
