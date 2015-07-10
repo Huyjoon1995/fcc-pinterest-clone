@@ -35,7 +35,8 @@ Router.route('/search/:searchQuery', function () {
     waitOn: function () {
         return [
             Meteor.subscribe('pins'),
-            Meteor.subscribe('images')
+            Meteor.subscribe('images'),
+            Meteor.subscribe('favorites')
         ];
     }
 });
@@ -46,7 +47,8 @@ Router.route('/my-profile', {
     waitOn: function () {
         return [
             Meteor.subscribe('pins'),
-            Meteor.subscribe('images')
+            Meteor.subscribe('images'),
+            Meteor.subscribe('favorites')
         ];
     }
 });

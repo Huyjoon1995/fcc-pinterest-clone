@@ -1,4 +1,14 @@
 Schema = {};
+Schema.Favorites = new SimpleSchema({
+    userId: {
+        type: String,
+        label: 'User'
+    },
+    pinId: {
+        type: String,
+        label: 'Pin'
+    }
+});
 
 Schema.Pins = new SimpleSchema({
     title: {

@@ -8,3 +8,17 @@ Template.pinContainer.onRendered(function () {
         });
     });
 });
+
+Template.pinContainer.helpers({
+    isFavorite: function() {
+        var userId = Meteor.userId();
+        return !_.isUndefined(Favorites.findOne({pinId: this._id, userId: userId}));
+    }
+});
+
+Template.pinContainer.events({
+    'click [data-toggle-favorite]': function(e) {
+        e.preventDefault();
+        Meteor.call('toggleFavorite', this._id);
+    }
+});

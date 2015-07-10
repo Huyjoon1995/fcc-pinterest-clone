@@ -3,12 +3,21 @@
         {{#each pins}}
             <div class="grid-item thumbnail">
                 {{#with FS.GetFile "images" image}}
-                    {{this.url store="thumbnail"}}
-                    <img src="{{this.url}}" class="img-responsive"/>
+                    {{url store="thumbnail"}}
+                    <img src="{{url}}" class="img-responsive"/>
                 {{/with}}
                 <div class="caption">
                     <h4>{{title}}</h4>
                     <p>{{description}}</p>
+                    <p>
+                        <button class="btn btn-default" data-toggle-favorite>
+                            {{#if isFavorite}}
+                                <i class="glyphicon glyphicon-heart"></i>
+                            {{else}}
+                                <i class="glyphicon glyphicon-heart-empty"></i>
+                            {{/if}}
+                        </button>
+                    </p>
                 </div>
             </div>
         {{/each}}
