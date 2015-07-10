@@ -12,3 +12,17 @@ iron:router
 accounts-twitter
 service-configuration
 accounts-ui
+aldeed:autoform
+aldeed:simple-schema
+aldeed:collection2
+msavin:mongol
+mrt:jquery-masonry
+iamkevingreen:imagesloaded
+isotope:isotope
+yogiben:autoform-file
+cfs:standard-packages
+cfs:gridfs
+dburles:collection-helpers
+cfs:ui
+yogiben:autoform-tags
+matteodem:easy-search

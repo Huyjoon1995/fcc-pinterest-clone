@@ -1,0 +1,23 @@
+<template name="search">
+    {{#contentFor "aside"}}
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" class="{{active}}{{#unless showUsers}}active{{/unless}}">
+                <a href="{{pathFor route="search" data=getData}}" data-tab-target="pins">
+                    Pins <span class="badge search-badge">{{pins.length}}</span>
+                </a>
+            </li>
+            <li role="presentation" class="{{#if showUsers}}active{{/if}}">
+                <a href="{{pathFor route="search" data=getData query="users=true"}}">
+                    Users <span class="badge search-badge">{{users.length}}</span>
+                </a>
+            </li>
+        </ul>
+    {{/contentFor}}
+
+
+    {{pathFor route="search" data="something"}}
+    {{#if showUsers}}
+    {{else}}
+        {{> pinContainer pins=pins}}
+    {{/if}}
+</template>
