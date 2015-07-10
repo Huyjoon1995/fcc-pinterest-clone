@@ -26,6 +26,12 @@ Schema.Pins = new SimpleSchema({
             }
         }
     },
+    tags: {
+        type: [String],
+        autoform: {
+            type: 'tags'
+        }
+    },
     userId: {
         type: String,
         label: 'User',
