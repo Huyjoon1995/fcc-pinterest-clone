@@ -52,3 +52,14 @@ Router.route('/my-profile', {
         ];
     }
 });
+
+Router.route('/new', {
+    name: 'newPin',
+    layoutTemplate: 'defaultLayout',
+    waitOn: function() {
+        return [
+            Meteor.subscribe('pins'),
+            Meteor.subscribe('images')
+        ];
+    }
+});
