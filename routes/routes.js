@@ -20,6 +20,10 @@ Router.route('/search/:searchQuery', function () {
                 Session.set('pins', result.results);
             });
 
+            EasySearch.search('users', query, function(err, result) {
+                Session.set('users', result.results);
+            });
+
             return query;
         }
     });
