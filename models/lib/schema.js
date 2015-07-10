@@ -1,10 +1,16 @@
 Schema = {};
 
 Schema.Pins = new SimpleSchema({
-    imageUrl: {
-        type: String,
-        label: 'Image url',
-        regEx: SimpleSchema.RegEx.Url
+    image: {
+        type: 'String',
+        label: 'Image',
+        autoform: {
+            afFieldInput: {
+                type: 'fileUpload',
+                collection: 'Images',
+                accept: 'image/*'
+            }
+        }
     },
     userId: {
         type: String,

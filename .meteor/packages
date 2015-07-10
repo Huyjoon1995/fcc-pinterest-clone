@@ -19,3 +19,8 @@ msavin:mongol
 mrt:jquery-masonry
 iamkevingreen:imagesloaded
 isotope:isotope
+yogiben:autoform-file
+cfs:standard-packages
+cfs:gridfs
+dburles:collection-helpers
+cfs:ui

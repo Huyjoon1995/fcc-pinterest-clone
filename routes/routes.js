@@ -15,6 +15,9 @@ Router.route('/my-profile', {
     name: 'myProfile',
     layoutTemplate: 'defaultLayout',
     waitOn: function() {
-        Meteor.subscribe('pins');
+        return [
+            Meteor.subscribe('pins'),
+            Meteor.subscribe('images')
+        ];
     }
 });
