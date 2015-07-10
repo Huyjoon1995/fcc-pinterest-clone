@@ -24,6 +24,9 @@ Router.route('/search/:searchQuery', function () {
                 Session.set('users', result.results);
             });
 
+            var queryString = this.params.query;
+            Session.set('showUsers', queryString.users === 'true');
+
             return query;
         }
     });
