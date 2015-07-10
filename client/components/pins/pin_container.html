@@ -6,9 +6,6 @@
                     {{this.url store="thumbnail"}}
                     <img src="{{this.url}}" class="img-responsive" alt=""/>
                 {{/with}}
-                {{#with FS.GetFile "Images" image}}
-                    In here, we can use the FS.File instance methods that work as helpers, such as {{url}}
-                {{/with}}
             </div>
         {{/each}}
     </div>
