@@ -8,6 +8,10 @@ Schema.Pins = new SimpleSchema({
     },
     userId: {
         type: String,
-        label: 'User'
+        label: 'User',
+        autoValue: function() {
+            return this.userId;
+        }
     }
 });
+

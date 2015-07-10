@@ -1,8 +1,3 @@
 <template name="myProfile">
-    {{#autoForm collection="Pins" id="insertPinForm" type="normal"}}
-        {{> afQuickField name='imageUrl' type="url" autofocus=''}}
-        <div class="form-group">
-            <button class="btn btn-primary">Upload</button>
-        </div>
-    {{/autoForm}}
+    {{> quickForm fields="imageUrl" collection="Pins" id="insertPinForm" type="method" meteormethod="insertPin"}}
 </template>

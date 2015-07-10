@@ -1,6 +1,6 @@
 Meteor.methods({
-    insertPin: function(doc) {
-        doc = _.extend(doc, {userId: Meteor.userId()});
+    insertPin: function (doc) {
+        Schema.Pins.clean(doc);
         Pins.insert(doc);
     }
 });
