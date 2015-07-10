@@ -1,8 +1,22 @@
 Schema = {};
 
 Schema.Pins = new SimpleSchema({
+    title: {
+        type: String,
+        label: 'Title',
+        max: 55
+    },
+    description: {
+        type: String,
+        label: 'Description',
+        optional: true,
+        max: 150,
+        autoform: {
+            rows: 3
+        }
+    },
     image: {
-        type: 'String',
+        type: String,
         label: 'Image',
         autoform: {
             afFieldInput: {
@@ -15,7 +29,7 @@ Schema.Pins = new SimpleSchema({
     userId: {
         type: String,
         label: 'User',
-        autoValue: function() {
+        autoValue: function () {
             return this.userId;
         }
     }

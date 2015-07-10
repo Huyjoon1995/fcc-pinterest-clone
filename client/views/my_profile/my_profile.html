@@ -1,12 +1,18 @@
 <template name="myProfile">
     <div class="row">
         <div class="col-md-12">
-            {{> quickForm fields="image" collection="Pins" id="insertPinForm" type="method" meteormethod="insertPin"}}
+            <fieldset>
+                <legend>Create pin</legend>
+                {{> quickForm omitFields="userId" collection="Pins" id="insertPinForm" type="method" meteormethod="insertPin"}}
+            </fieldset>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-            {{> pinContainer}}
+            <fieldset>
+                <legend>My pins</legend>
+                {{> pinContainer}}
+            </fieldset>
         </div>
     </div>
 </template>

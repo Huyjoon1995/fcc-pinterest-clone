@@ -1,10 +1,10 @@
 <template name="pinContainer">
     <div class="grid">
         {{#each pins}}
-            <div class="grid-item">
+            <div class="grid-item thumbnail">
                 {{#with FS.GetFile "images" image}}
                     {{this.url store="thumbnail"}}
-                    <img src="{{this.url}}" class="img-responsive" alt=""/>
+                    <img src="{{this.url}}" class="img-responsive"/>
                 {{/with}}
             </div>
         {{/each}}
