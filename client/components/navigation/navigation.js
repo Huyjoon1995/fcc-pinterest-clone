@@ -3,5 +3,11 @@ Template.navigation.events({
         e.preventDefault();
         AccountsTemplates.logout();
         Router.go('login');
+    },
+    'submit [data-search]': function(e) {
+        e.preventDefault();
+        Router.go('search', {
+            searchQuery: e.target.query.value
+        })
     }
 });
