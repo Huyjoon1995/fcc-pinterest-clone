@@ -14,10 +14,20 @@
         </ul>
     {{/contentFor}}
 
-
     {{pathFor route="search" data="something"}}
     {{#if showUsers}}
+        <fieldset>
+            <legend>Users</legend>
+            <div class="list-group">
+                {{#each users}}
+                    <a href="#" class="list-group-item">{{username}}</a>
+                {{/each}}
+            </div>
+        </fieldset>
     {{else}}
-        {{> pinContainer pins=pins}}
+        <fieldset>
+            <legend>Pins</legend>
+            {{> pinContainer pins=pins}}
+        </fieldset>
     {{/if}}
 </template>
