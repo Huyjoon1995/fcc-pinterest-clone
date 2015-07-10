@@ -32,6 +32,13 @@ Schema.Pins = new SimpleSchema({
             type: 'tags'
         }
     },
+    creationDate: {
+        type: Date,
+        label: 'Creation Date',
+        autoValue: function () {
+            return new Date();
+        }
+    },
     userId: {
         type: String,
         label: 'User',
