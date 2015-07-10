@@ -1,3 +1,8 @@
 <template name="myProfile">
-    {{> quickForm collection="Pins" id="insertPinForm" type="normal"}}
+    {{#autoForm collection="Pins" id="insertPinForm" type="normal"}}
+        {{> afQuickField name='imageUrl' type="url" autofocus=''}}
+        <div class="form-group">
+            <button class="btn btn-primary">Upload</button>
+        </div>
+    {{/autoForm}}
 </template>

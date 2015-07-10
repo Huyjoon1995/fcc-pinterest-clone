@@ -5,5 +5,9 @@ Schema.Pins = new SimpleSchema({
         type: String,
         label: 'Image url',
         regEx: SimpleSchema.RegEx.Url
+    },
+    userId: {
+        type: String,
+        label: 'User'
     }
 });
