@@ -53,6 +53,10 @@ Template.pinContainer.events({
                 popout: true,
                 onConfirm: function () {
                     Meteor.call('deletePin', id);
+                    sAlert.info('The pin has been deleted. We salute it goodbye and may it rest in peace.');
+                },
+                onCancel: function() {
+                    sAlert.info('The pin has not been deleted and it\'s still full of life!');
                 }
             });
         element.confirmation('show');
