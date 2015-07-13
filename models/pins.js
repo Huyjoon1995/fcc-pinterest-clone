@@ -7,3 +7,4 @@ Pins.helpers({
         return Images.findOne(this.image);
     }
 });
+
