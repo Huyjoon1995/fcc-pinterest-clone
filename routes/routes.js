@@ -21,7 +21,8 @@ Router.route('/search/:searchQuery', {
         return [
             Meteor.subscribe('pins'),
             Meteor.subscribe('images'),
-            Meteor.subscribe('favorites')
+            Meteor.subscribe('favorites'),
+            Meteor.subscribe('users')
         ];
     }
 });
@@ -36,7 +37,8 @@ Router.route('/user/:_id', {
         return [
             Meteor.subscribe('pins'),
             Meteor.subscribe('images'),
-            Meteor.subscribe('favorites')
+            Meteor.subscribe('favorites'),
+            Meteor.subscribe('users')
         ];
     }
 });
