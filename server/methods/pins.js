@@ -4,6 +4,10 @@ Meteor.methods({
         Pins.insert(doc);
     },
     deletePin: function(id) {
-        Pins.remove(id);
+        var pin = Pins.findOne(id);
+        if (!_.isUndefined(pin) && pin.userId === this.userId) {
+            Favorites.remove({pinId: id});
+            Pins.remove(id);
+        }
     }
 });
