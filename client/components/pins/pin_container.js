@@ -35,8 +35,10 @@ Template.pinContainer.helpers({
 });
 
 Template.pinContainer.events({
-    'click [data-toggle-favorite]': function (e) {
-        e.preventDefault();
+    'click [data-toggle-favorite]': function () {
         Meteor.call('toggleFavorite', this._id);
+    },
+    'click [data-delete]': function() {
+        Meteor.call('deletePin', this._id);
     }
 });
