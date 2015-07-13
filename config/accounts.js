@@ -22,5 +22,11 @@ AccountsTemplates.addFields([
         displayName: "Username",
         required: true
     },
+    {
+        _id: 'name',
+        type: 'text',
+        displayName: 'Full name',
+        required: true
+    },
     pwd
 ]);

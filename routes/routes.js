@@ -53,3 +53,8 @@ Router.route('/new', {
         ];
     }
 });
+
+Router.route('/settings', {
+    name: 'settings',
+    layoutTemplate: 'defaultLayout'
+});
