@@ -1,6 +1,6 @@
 Meteor.startup(function () {
     sAlert.config({
-        effect: 'bouncyflip',
+        effect: 'jelly',
         position: 'top-right',
         timeout: 5000,
         html: false,
