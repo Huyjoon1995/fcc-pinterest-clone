@@ -1,7 +1,7 @@
 Meteor.publish('users', function() {
    return Meteor.users.find({}, {
        fields: {
-           'profile.username': 1
+           'profile.user': 1
        }
    });
 });
