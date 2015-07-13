@@ -9,20 +9,21 @@ Template.pinContainer.onRendered(function () {
         });
 
         instance.autorun(function () {
-            Template.currentData().pins.observeChanges({
-                added: function (doc) {
-                    container.imagesLoaded(function () {
-                        grid.masonry('reloadItems');
-                        grid.masonry('layout');
-                    });
-                },
-                removed: function () {
-                    container.imagesLoaded(function () {
-                        grid.masonry('reloadItems');
-                        grid.masonry('layout');
-                    });
-                }
-            });
+            if (_.isFunction(Template.currentData().pins.observeChanges))
+                Template.currentData().pins.observeChanges({
+                    added: function (doc) {
+                        container.imagesLoaded(function () {
+                            grid.masonry('reloadItems');
+                            grid.masonry('layout');
+                        });
+                    },
+                    removed: function () {
+                        container.imagesLoaded(function () {
+                            grid.masonry('reloadItems');
+                            grid.masonry('layout');
+                        });
+                    }
+                });
         });
     });
 });
@@ -53,6 +54,10 @@ Template.pinContainer.events({
                 popout: true,
                 onConfirm: function () {
                     Meteor.call('deletePin', id);
+                    sAlert.info('The pin has been deleted. We salute it goodbye and may it rest in peace.');
+                },
+                onCancel: function () {
+                    sAlert.info('The pin has not been deleted and it\'s still full of life!');
                 }
             });
         element.confirmation('show');
