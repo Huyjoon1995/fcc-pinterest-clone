@@ -16,6 +16,11 @@ Schema.Pins = new SimpleSchema({
         label: 'Title',
         max: 55
     },
+    totalFavored: {
+        type: Number,
+        label: 'Total favored',
+        defaultValue: 0
+    },
     description: {
         type: String,
         label: 'Description',

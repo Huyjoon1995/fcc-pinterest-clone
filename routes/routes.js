@@ -4,7 +4,15 @@ Router.plugin('ensureSignedIn', {
 
 Router.route('/', {
     name: 'home',
-    layoutTemplate: 'defaultLayout'
+    layoutTemplate: 'defaultLayout',
+    waitOn: function () {
+        return [
+            Meteor.subscribe('pins'),
+            Meteor.subscribe('images'),
+            Meteor.subscribe('favorites'),
+            Meteor.subscribe('users')
+        ];
+    }
 });
 
 Router.route('/login', {
