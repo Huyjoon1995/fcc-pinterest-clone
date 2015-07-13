@@ -1,5 +1,15 @@
 AccountsTemplates.configure({
-    homeRoutePath: '/'
+    homeRoutePath: '/',
+    onSubmitHook: function () {
+        if (_.isNull(Meteor.userId()))
+            sAlert.warning('Invalid credentials. Are you new here? Don\'t be afraid to click on "Register"');
+        else
+            sAlert.info('You have been logged in. Welcome!');
+
+    },
+    onLogoutHook: function () {
+        sAlert.info('You have been logged out. Have a nice day!');
+    }
 });
 
 var pwd = AccountsTemplates.removeField('password');
