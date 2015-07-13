@@ -1,3 +1,9 @@
+Template.search.onCreated(function () {
+    EasySearch.search('pins', this.data, function(err, result) {
+        Session.set('pins', result.results);
+    });
+});
+
 Template.search.helpers({
     pins: function () {
         return Session.get('pins');
