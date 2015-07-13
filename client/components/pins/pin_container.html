@@ -8,7 +8,6 @@
                 {{/with}}
                 <div class="caption">
                     <h4>{{title}}</h4>
-
                     <p>{{description}}</p>
                     <hr/>
                     <p>
@@ -19,6 +18,9 @@
                                 <i class="glyphicon glyphicon-heart-empty"></i>
                             {{/if}}
                         </button>
+                        {{#if isMine}}
+                            <button class="btn btn-default" data-delete><i class="glyphicon glyphicon-trash"></i></button>
+                        {{/if}}
                     </p>
                     <hr/>
                     <p>

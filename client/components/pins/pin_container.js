@@ -23,12 +23,14 @@ Template.pinContainer.onRendered(function () {
 
 Template.pinContainer.helpers({
     pins: function () {
-        console.log(_.first(Template.currentData().pins));
         return Template.currentData().pins;
     },
     isFavorite: function () {
         var userId = Meteor.userId();
         return !_.isUndefined(Favorites.findOne({pinId: this._id, userId: userId}));
+    },
+    isMine: function() {
+        return this.userId === Meteor.userId();
     }
 });
 
