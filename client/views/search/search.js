@@ -1,14 +1,14 @@
+Template.search.onCreated(function () {
+    var instance = this;
+    instance.pins = new ReactiveVar([]);
+    console.log(this.data);
+    EasySearch.search('pins', this.data, function(err, result) {
+        instance.pins.set(result.results);
+    });
+});
+
 Template.search.helpers({
     pins: function () {
-        return Session.get('pins');
-    },
-    users: function() {
-        return Session.get('users');
-    },
-    showUsers: function() {
-        return Session.get('showUsers');
-    },
-    getData: function() {
-        return {searchQuery: Template.instance().data};
+        return Template.instance().pins.get();
     }
 });
