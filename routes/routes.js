@@ -26,9 +26,12 @@ Router.route('/search/:searchQuery', {
     }
 });
 
-Router.route('/my-profile', {
-    name: 'myProfile',
+Router.route('/user/:_id', {
+    name: 'user',
     layoutTemplate: 'defaultLayout',
+    data: function() {
+        return this.params._id;
+    },
     waitOn: function () {
         return [
             Meteor.subscribe('pins'),
