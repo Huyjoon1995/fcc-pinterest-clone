@@ -11,7 +11,13 @@ Template.pinContainer.onRendered(function () {
         instance.autorun(function () {
             Template.currentData().pins.observeChanges({
                 added: function (doc) {
-                    container.imagesLoaded(function() {
+                    container.imagesLoaded(function () {
+                        grid.masonry('reloadItems');
+                        grid.masonry('layout');
+                    });
+                },
+                removed: function () {
+                    container.imagesLoaded(function () {
                         grid.masonry('reloadItems');
                         grid.masonry('layout');
                     });
@@ -29,7 +35,7 @@ Template.pinContainer.helpers({
         var userId = Meteor.userId();
         return !_.isUndefined(Favorites.findOne({pinId: this._id, userId: userId}));
     },
-    isMine: function() {
+    isMine: function () {
         return this.userId === Meteor.userId();
     }
 });
@@ -38,7 +44,17 @@ Template.pinContainer.events({
     'click [data-toggle-favorite]': function () {
         Meteor.call('toggleFavorite', this._id);
     },
-    'click [data-delete]': function() {
-        Meteor.call('deletePin', this._id);
+    'click [data-delete]': function () {
+        var id = this._id;
+        var element = $('[data-id="' + id + '"]');
+        element.confirmation(
+            {
+                placement: 'right',
+                popout: true,
+                onConfirm: function () {
+                    Meteor.call('deletePin', id);
+                }
+            });
+        element.confirmation('show');
     }
 });

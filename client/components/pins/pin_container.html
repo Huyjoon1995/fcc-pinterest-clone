@@ -11,7 +11,8 @@
                     <p>{{description}}</p>
                     <hr/>
                     <p>
-                        <button class="btn btn-default" data-toggle-favorite>
+                    <div class="remove-confirmation" data-id="{{_id}}"></div>
+                    <button class="btn btn-default" data-toggle-favorite>
                             {{#if isFavorite}}
                                 <i class="glyphicon glyphicon-heart"></i>
                             {{else}}
