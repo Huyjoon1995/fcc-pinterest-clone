@@ -8,7 +8,9 @@
                 {{/with}}
                 <div class="caption">
                     <h4>{{title}}</h4>
+
                     <p>{{description}}</p>
+                    <hr/>
                     <p>
                         <button class="btn btn-default" data-toggle-favorite>
                             {{#if isFavorite}}
@@ -17,6 +19,10 @@
                                 <i class="glyphicon glyphicon-heart-empty"></i>
                             {{/if}}
                         </button>
+                    </p>
+                    <hr/>
+                    <p>
+                        {{> userPin userId=userId}}
                     </p>
                 </div>
             </div>
