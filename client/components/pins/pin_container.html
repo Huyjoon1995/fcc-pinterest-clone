@@ -8,20 +8,22 @@
                 {{/with}}
                 <div class="caption">
                     <h4>{{title}}</h4>
+
                     <p>{{description}}</p>
                     <hr/>
                     <p>
+
                     <div class="remove-confirmation" data-id="{{_id}}"></div>
                     <button class="btn btn-default" data-toggle-favorite>
-                            {{#if isFavorite}}
-                                <i class="glyphicon glyphicon-heart"></i>
-                            {{else}}
-                                <i class="glyphicon glyphicon-heart-empty"></i>
-                            {{/if}}
-                        </button>
-                        {{#if isMine}}
-                            <button class="btn btn-default" data-delete><i class="glyphicon glyphicon-trash"></i></button>
+                        {{#if isFavorite}}
+                            <i class="glyphicon glyphicon-heart"></i>
+                        {{else}}
+                            <i class="glyphicon glyphicon-heart-empty"></i>
                         {{/if}}
+                    </button>
+                    {{#if isMine}}
+                        <button class="btn btn-default" data-delete><i class="glyphicon glyphicon-trash"></i></button>
+                    {{/if}}
                     </p>
                     <hr/>
                     <p>
@@ -29,6 +31,8 @@
                     </p>
                 </div>
             </div>
+        {{else}}
+            <h4 class="text-muted">I am hungry. <a href="{{pathFor route="newPin"}}">Feed me pins</a>!</h4>
         {{/each}}
     </div>
 </template>
