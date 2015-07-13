@@ -9,6 +9,7 @@ Template.pinContainer.onRendered(function () {
         });
 
         instance.autorun(function () {
+            if (_.isFunction(Template.currentData().pins.observeChanges))
             Template.currentData().pins.observeChanges({
                 added: function (doc) {
                     container.imagesLoaded(function() {
@@ -23,7 +24,6 @@ Template.pinContainer.onRendered(function () {
 
 Template.pinContainer.helpers({
     pins: function () {
-        console.log('changes');
         return Template.currentData().pins;
     },
     isFavorite: function () {

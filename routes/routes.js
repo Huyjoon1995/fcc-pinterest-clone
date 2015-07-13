@@ -11,27 +11,12 @@ Router.route('/login', {
     name: 'login'
 });
 
-Router.route('/search/:searchQuery', function () {
-    this.layout('defaultLayout');
-    this.render('search', {
-        data: function() {
-            var query = this.params.searchQuery;
-            EasySearch.search('pins', query, function(err, result) {
-                Session.set('pins', result.results);
-            });
-
-            EasySearch.search('users', query, function(err, result) {
-                Session.set('users', result.results);
-            });
-
-            var queryString = this.params.query;
-            Session.set('showUsers', queryString.users === 'true');
-
-            return query;
-        }
-    });
-}, {
+Router.route('/search/:searchQuery', {
+    layoutTemplate: 'defaultLayout',
     name: 'search',
+    data: function() {
+        return this.params.searchQuery;
+    },
     waitOn: function () {
         return [
             Meteor.subscribe('pins'),

@@ -1,33 +1,6 @@
 <template name="search">
-    {{#contentFor "aside"}}
-        <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="{{active}}{{#unless showUsers}}active{{/unless}}">
-                <a href="{{pathFor route="search" data=getData}}" data-tab-target="pins">
-                    Pins <span class="badge search-badge">{{pins.length}}</span>
-                </a>
-            </li>
-            <li role="presentation" class="{{#if showUsers}}active{{/if}}">
-                <a href="{{pathFor route="search" data=getData query="users=true"}}">
-                    Users <span class="badge search-badge">{{users.length}}</span>
-                </a>
-            </li>
-        </ul>
-    {{/contentFor}}
-
-    {{pathFor route="search" data="something"}}
-    {{#if showUsers}}
-        <fieldset>
-            <legend>Users</legend>
-            <div class="list-group">
-                {{#each users}}
-                    <a href="#" class="list-group-item">{{username}}</a>
-                {{/each}}
-            </div>
-        </fieldset>
-    {{else}}
-        <fieldset>
-            <legend>Pins</legend>
-            {{> pinContainer pins=pins}}
-        </fieldset>
-    {{/if}}
+    <fieldset>
+        <legend>Pins</legend>
+        {{> pinContainer pins=pins}}
+    </fieldset>
 </template>
