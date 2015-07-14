@@ -94,6 +94,7 @@ oauth@1.1.4
 oauth1@1.1.4
 observe-sequence@1.0.6
 ordered-dict@1.0.3
+ostrio:iron-router-title@0.2.1
 raix:eventemitter@0.1.2
 random@1.0.3
 reactive-dict@1.1.0
