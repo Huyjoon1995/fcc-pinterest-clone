@@ -1,6 +1,9 @@
+var title = 'Pinterest clone';
+
 Router.configure({
     layoutTemplate: 'defaultLayout',
-    progress: true
+    progress: true,
+    title: title
 });
 
 Router.plugin('ensureSignedIn', {
@@ -9,11 +12,13 @@ Router.plugin('ensureSignedIn', {
 
 Router.route('/login', {
     name: 'login',
+    title: title + ' - Authenticate',
     layoutTemplate: 'authLayout'
 });
 
 Router.route('/', {
     name: 'home',
+    title: title + ' - Home',
     waitOn: function () {
         return [
             Meteor.subscribe('pins'),
@@ -26,6 +31,9 @@ Router.route('/', {
 
 Router.route('/search/:searchQuery', {
     name: 'search',
+    title: function() {
+        return title + ' - Results for "' + this.params.searchQuery + '"'
+    },
     data: function() {
         return this.params.searchQuery;
     },
@@ -41,6 +49,7 @@ Router.route('/search/:searchQuery', {
 
 Router.route('/user/:_id', {
     name: 'user',
+    title: title + ' - User\'s profile',
     data: function() {
         return this.params._id;
     },
@@ -56,6 +65,7 @@ Router.route('/user/:_id', {
 
 Router.route('/new', {
     name: 'newPin',
+    title: title + ' - New pin',
     waitOn: function() {
         return [
             Meteor.subscribe('pins'),
@@ -65,5 +75,6 @@ Router.route('/new', {
 });
 
 Router.route('/settings', {
-    name: 'settings'
+    name: 'settings',
+    title: title + ' - Settings'
 });
