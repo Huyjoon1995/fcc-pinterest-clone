@@ -1,5 +1,6 @@
 Router.configure({
-    layoutTemplate: 'defaultLayout'
+    layoutTemplate: 'defaultLayout',
+    progress: true
 });
 
 Router.plugin('ensureSignedIn', {
