@@ -50,15 +50,21 @@ Schema.Pins = new SimpleSchema({
     creationDate: {
         type: Date,
         label: 'Creation Date',
-        autoValue: function () {
-            return new Date();
+        autoValue: function() {
+            if (this.isInsert)
+                return new Date();
+            else
+                this.unset();
         }
     },
     userId: {
         type: String,
         label: 'User',
-        autoValue: function () {
-            return this.userId;
+        autoValue: function() {
+            if (this.isInsert)
+                return this.userId;
+            else
+                this.unset();
         }
     }
 });
