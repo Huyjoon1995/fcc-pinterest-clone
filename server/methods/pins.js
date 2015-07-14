@@ -1,7 +1,7 @@
 Meteor.methods({
     insertPin: function (doc) {
         Schema.Pins.clean(doc);
-        Pins.insert(doc);
+        Pins.insert(_.extend(doc, {totalFavored: 0}));
     },
     deletePin: function(id) {
         var pin = Pins.findOne(id);
