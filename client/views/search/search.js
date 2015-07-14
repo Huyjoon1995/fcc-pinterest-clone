@@ -1,8 +1,10 @@
 Template.search.onCreated(function () {
     var instance = this;
     instance.pins = new ReactiveVar([]);
-    EasySearch.search('pins', this.data, function(err, result) {
-        instance.pins.set(result.results);
+    instance.autorun(function () {
+        EasySearch.search('pins', Template.currentData(), function(err, result) {
+            instance.pins.set(result.results);
+        });
     });
 });
 
