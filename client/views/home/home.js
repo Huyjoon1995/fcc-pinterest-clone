@@ -8,6 +8,6 @@ Template.home.onCreated(function () {
 
 Template.home.helpers({
     pins: function() {
-        return Pins.find({}, {sort: {totalFavored: -1}, limit: 20});
+        return Pins.find({}, {sort: {totalFavored: -1}, limit: 20}).fetch();
     }
 });
