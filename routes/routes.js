@@ -12,8 +12,7 @@ Router.plugin('ensureSignedIn', {
 
 Router.route('/login', {
     name: 'login',
-    title: title + ' - Authenticate',
-    layoutTemplate: 'authLayout'
+    title: title + ' - Authenticate'
 });
 
 Router.route('/', {
