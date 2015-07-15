@@ -55,5 +55,12 @@ Template.pinContainer.events({
                 }
             });
         element.confirmation('show');
+    },
+    'click [data-pin-image]': function() {
+        sImageBox.open(this.url(), {
+            originalHeight: false,
+            originalWidth: false,
+            animation: 'zoomIn'
+        });
     }
 });
