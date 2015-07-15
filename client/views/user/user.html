@@ -1,4 +1,17 @@
 <template name="user">
+    {{#contentFor "aside"}}
+
+    {{/contentFor}}
+
+    <div class="row">
+        <div class="col-md-12">
+            <fieldset>
+                <legend>Favorites</legend>
+                {{> pinContainer pins=favoratePins }}
+            </fieldset>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-md-12">
             {{#with user}}
