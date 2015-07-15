@@ -18,6 +18,7 @@ Build a full stack JavaScript app that successfully reverse-engineers this: http
 - [x] As an authenticated user, I can see the 20 most favorite images on the homepage
 - [x] As an authenticated user, I can add tags to images
 - [x] As an authenticated user, I can search on tags for images
+- [x] As an authenticated user, Given I click on an image. I should see a big preview of it.
 - [ ] As an authenticated user, I can see all my favorate images in a Pinterest like wall
 
 
