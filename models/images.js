@@ -4,7 +4,10 @@ Images = new FS.Collection('images', {
 
 Images.allow({
     insert: function (userId, doc) {
-        return true;
+        return !_.isUndefined(userId) && doc.isImage();
+    },
+    update: function(userId, doc) {
+        return !_.isUndefined(userId);
     },
     download: function (userId) {
         return true;
