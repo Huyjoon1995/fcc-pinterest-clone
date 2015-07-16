@@ -4,7 +4,7 @@ Template.pinContainer.onCreated(function () {
 
 Template.pinContainer.onRendered(function () {
     var instance = this;
-    var container = $('.grid');
+    var container = this.$('.grid');
     instance.autorun(function () {
         instance.pins.set(Template.currentData().pins);
         container.imagesLoaded(function () {
