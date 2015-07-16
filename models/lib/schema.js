@@ -44,13 +44,19 @@ Schema.Pins = new SimpleSchema({
     tags: {
         type: [String],
         autoform: {
-            type: 'tags'
+            type: 'tags',
+            afFieldInput: {
+                maxTags: 3,
+                trimValue: true,
+                maxChars: 25
+            }
         }
+
     },
     creationDate: {
         type: Date,
         label: 'Creation Date',
-        autoValue: function() {
+        autoValue: function () {
             if (this.isInsert)
                 return new Date();
             else
@@ -60,7 +66,7 @@ Schema.Pins = new SimpleSchema({
     userId: {
         type: String,
         label: 'User',
-        autoValue: function() {
+        autoValue: function () {
             if (this.isInsert)
                 return this.userId;
             else

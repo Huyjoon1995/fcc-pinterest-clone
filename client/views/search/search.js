@@ -9,6 +9,9 @@ Template.search.onCreated(function () {
 });
 
 Template.search.helpers({
+    query: function() {
+      return Template.currentData();
+    },
     pins: function () {
         return Template.instance().pins.get();
     }

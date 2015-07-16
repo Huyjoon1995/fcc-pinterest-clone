@@ -4,7 +4,7 @@ Template.pinContainer.onCreated(function () {
 
 Template.pinContainer.onRendered(function () {
     var instance = this;
-    var container = $('.grid');
+    var container = this.$('.grid');
     instance.autorun(function () {
         instance.pins.set(Template.currentData().pins);
         container.imagesLoaded(function () {
@@ -32,6 +32,9 @@ Template.pinContainer.helpers({
     },
     isMine: function () {
         return this.userId === Meteor.userId();
+    },
+    searchTag: function() {
+        return {searchQuery: this}
     }
 });
 
@@ -55,5 +58,12 @@ Template.pinContainer.events({
                 }
             });
         element.confirmation('show');
+    },
+    'click [data-pin-image]': function() {
+        sImageBox.open(this.url(), {
+            originalHeight: false,
+            originalWidth: false,
+            animation: 'zoomIn'
+        });
     }
 });
