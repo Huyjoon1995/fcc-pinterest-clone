@@ -32,6 +32,9 @@ Template.pinContainer.helpers({
     },
     isMine: function () {
         return this.userId === Meteor.userId();
+    },
+    searchTag: function() {
+        return {searchQuery: this}
     }
 });
 
