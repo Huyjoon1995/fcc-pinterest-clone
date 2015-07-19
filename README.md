@@ -6,6 +6,9 @@ This project is part of Freecodecamp's Basejump.
 ##Objective
 Build a full stack JavaScript app that successfully reverse-engineers this: http://linkterest.herokuapp.com/ and deploy it to Heroku.
 
+##Demo
+http://tfarla-pinterest.herokuapp.com/
+
 ##User stories
 - [x] As an unauthenticated user, I can login with Twitter
 - [x] As an authenticated user, I can link to images
